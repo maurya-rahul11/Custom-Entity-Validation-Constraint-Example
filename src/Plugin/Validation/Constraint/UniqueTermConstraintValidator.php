@@ -21,7 +21,7 @@ class UniqueTermConstraintValidator extends ConstraintValidator {
             $vocabObj = Vocabulary::load($vocabId);
             if (!empty($this->isUnique($newTermName, $vocabId))) {
                 // The value is not unique, so a violation is applied. The type of violation applied comes from the constraint description
-                $this->context->addViolation($constraint->notUnique, ['%term' => $newTermName, '%vocab' => $vocabObj->label()]);
+                $this->context->addViolation($constraint->notUniqueMsg, ['%term' => $newTermName, '%vocab' => $vocabObj->label()]);
             }
         }
     }

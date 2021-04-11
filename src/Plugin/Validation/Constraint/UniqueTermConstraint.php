@@ -17,5 +17,5 @@ use Symfony\Component\Validator\ConstraintValidator;
 class UniqueTermConstraint extends Constraint {
 
     // The message that will be shown if the value is not unique.
-    public $notUnique = 'Term creation failed: %term is already exists in %vocab vocabulary. Please create unique term.';
+    public $notUniqueMsg = 'Term creation failed: %term is already exists in %vocab vocabulary. Please create unique term.';
 }
