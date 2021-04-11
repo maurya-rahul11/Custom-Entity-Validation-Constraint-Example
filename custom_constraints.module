@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Contains custom_constraints.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function custom_constraints_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the custom_constraints module.
+    case 'help.page.custom_constraints':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Custom Entity Api Validation Constraint.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ *
+ * @param array $entity_types
+ */
+function custom_constraints_entity_type_alter(array &$entity_types) {
+  $entity_types['taxonomy_term']->addConstraint('UniqueTermConstraint');
+}

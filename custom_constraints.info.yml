@@ -1,0 +1,5 @@
+name: 'Custom Constraints'
+type: module
+description: 'Custom Entity Api Validation Constraint.'
+core: 8.x
+package: 'Custom'
