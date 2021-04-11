@@ -26,7 +26,7 @@ class UniqueTermConstraintValidator extends ConstraintValidator {
         }
     }
 
-    // check for a unique term value for passed vocab id
+    // check for a unique term value for passed vocabulary id
     private function isUnique($newTermName, $vocabId) {
         $res = \Drupal::entityQuery('taxonomy_term')
             ->condition('name', $newTermName)
